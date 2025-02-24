@@ -13,8 +13,12 @@ export const PeerProvider = ({ children }) => {
   useEffect(() => {
     //const peer = new Peer(getPeerId());
     const peer = new Peer("2001", {
-        debug: 3
-    });
+        host: "10.0.0.200", // Replace with the local IP of the computer running the PeerJS server
+        port: 9000,
+        path: "/myapp",
+        secure: false, // Since it's local, no SSL is needed
+        debug: 3,
+      });
 
     //get peer id from database then call it in constructor
     /*const getPeerId = () => {
